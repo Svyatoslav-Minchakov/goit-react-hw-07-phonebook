@@ -1,3 +1,5 @@
+import { ContactsList } from './contacts.styled';
+
 export const ContactList = ({ contacts, deleteContact }) => {
   console.log(contacts);
 
@@ -8,7 +10,7 @@ export const ContactList = ({ contacts, deleteContact }) => {
   }
 
   return (
-    <ul>
+    <ContactsList>
       {contacts.map(contact => {
         return (
           <li key={contact.id}>
@@ -20,6 +22,6 @@ export const ContactList = ({ contacts, deleteContact }) => {
           </li>
         );
       })}
-    </ul>
+    </ContactsList>
   );
 };

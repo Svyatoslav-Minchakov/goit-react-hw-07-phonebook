@@ -1,7 +1,9 @@
 import React from 'react';
+import { FilterContainer } from './filter.styled';
+
 export const Filter = ({ filter, onChangeFilter }) => {
   return (
-    <div>
+    <FilterContainer>
       <label>
         Find contacts by name:
         <input
@@ -11,6 +13,6 @@ export const Filter = ({ filter, onChangeFilter }) => {
           onChange={onChangeFilter}
         />
       </label>
-    </div>
+    </FilterContainer>
   );
 };

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PageForm } from './form.styled';
 
 export class Form extends Component {
   state = {
@@ -25,7 +26,7 @@ export class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.addContact}>
+      <PageForm onSubmit={this.addContact}>
         <label>
           Name
           <input
@@ -52,7 +53,7 @@ export class Form extends Component {
           />
         </label>
         <button>Add comtact</button>
-      </form>
+      </PageForm>
     );
   }
 }
