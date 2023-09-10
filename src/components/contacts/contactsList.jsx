@@ -1,22 +1,14 @@
 import { ContactsList } from './contacts.styled';
 
 export const ContactList = ({ contacts, deleteContact }) => {
-  console.log(contacts);
-
-  function handleButton(contactId) {
-    // console.log(contactId);
-    // console.log(contacts);
-    deleteContact(contactId);
-  }
-
   return (
     <ContactsList>
-      {contacts.map(contact => {
+      {contacts.map(({ id, name, number }) => {
         return (
-          <li key={contact.id}>
-            <span>{contact.name}:</span>
-            <span> {contact.number}</span>
-            <button onClick={() => handleButton(contact.id)} type="button">
+          <li key={id}>
+            <span>{name}:</span>
+            <span> {number}</span>
+            <button onClick={() => deleteContact(id)} type="button">
               DEL
             </button>
           </li>

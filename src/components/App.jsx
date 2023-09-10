@@ -14,25 +14,22 @@ export class App extends Component {
       { id: nanoid(), name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
 
   createContact = data => {
-    const newContact = { name: data.name, number: data.number, id: nanoid() };
-    if (this.state.contacts.some(item => item.name === newContact.name)) {
+    const isDublicateName = this.state.contacts.some(
+      item => item.name.toLowerCase() === data.name.toLowerCase()
+    );
+    if (isDublicateName) {
       alert('It has alredy been');
       return;
     }
 
-    this.setState(
-      prevState => ({
-        contacts: [...prevState.contacts, newContact],
-      }),
-      () => {
-        console.log(this.state);
-      }
-    );
+    const newContact = { ...data, id: nanoid() };
+
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, newContact],
+    }));
   };
 
   onChangeFilter = ({ target: { value } }) => {
@@ -45,11 +42,16 @@ export class App extends Component {
     }));
   };
 
-  render() {
+  getFilterContacts = () => {
     const { contacts, filter } = this.state;
-    const filterContacts = contacts.filter(contact =>
+    return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
+  };
+
+  render() {
+    const { filter } = this.state;
+    const filterContacts = this.getFilterContacts();
     return (
       <Container>
         <h2>Phonebook</h2>
