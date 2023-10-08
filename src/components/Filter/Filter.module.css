@@ -1,0 +1,18 @@
+.input {
+  display: block;
+  border: 1px solid rgba(33, 33, 33, 0.3);
+  border-radius: 4px;
+  height: 25px;
+  width: 80%;
+  font-size: 20px;
+  margin: 10px auto;
+  margin-bottom: 20px;
+}
+
+.input::placeholder {
+  font-size: 14px;
+}
+
+.input:focus {
+  outline-color: rgb(15, 161, 167);
+}
