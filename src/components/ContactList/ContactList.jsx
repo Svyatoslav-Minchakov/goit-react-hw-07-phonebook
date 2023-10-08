@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 import { useDispatch } from 'react-redux';
 import { remove } from 'redux/sliceContact';
@@ -40,8 +39,4 @@ export const ContactList = () => {
       })}
     </ul>
   );
-};
-
-ContactList.propTypes = {
-  listContact: PropTypes.array.isRequired,
 };
