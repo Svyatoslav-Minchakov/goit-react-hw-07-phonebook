@@ -10,8 +10,9 @@ export const sliceContact = createSlice({
   ],
   reducers: {
     add(state, action) {
+      console.log(action);
       state.push({
-        id: nanoid(),
+        id: action.payload.id,
         name: action.payload.name,
         number: action.payload.number,
       });

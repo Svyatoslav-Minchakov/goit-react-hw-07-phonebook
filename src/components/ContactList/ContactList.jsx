@@ -5,24 +5,31 @@ import { remove } from 'redux/sliceContact';
 
 export const ContactList = ({ listContact }) => {
   const dispatch = useDispatch();
-  return listContact.map(cont => {
-    return (
-      <p key={cont.id} className={css.listItem}>
-        <span className={css.phone}>
-          {cont.name}: {cont.number}
-        </span>
-        <button
-          className={css.btn}
-          type="button"
-          onClick={() => {
-            dispatch(remove(cont.id));
-          }}
-        >
-          Delete
-        </button>
-      </p>
-    );
-  });
+  return (
+    <ul className={css.list}>
+      {listContact.map(cont => {
+        // console.log(cont);
+        return (
+          <li key={cont.id} className={css.listItem}>
+            <p className={css.text}>
+              <span className={css.phone}>
+                {cont.name}: {cont.number}
+              </span>
+            </p>
+            <button
+              className={css.btn}
+              type="button"
+              onClick={() => {
+                dispatch(remove(cont.id));
+              }}
+            >
+              Delete
+            </button>
+          </li>
+        );
+      })}
+    </ul>
+  );
 };
 
 ContactList.propTypes = {

@@ -1,7 +1,13 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
 .listItem {
   display: flex;
   justify-content: space-between;
-
+  width: 100%;
   margin: 5px;
 
   display: flex;
@@ -21,4 +27,8 @@
 .btn:hover {
   color: white;
   background-color: teal;
+}
+
+.text {
+  margin: 0;
 }
