@@ -4,8 +4,6 @@ import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { add } from 'redux/sliceContact';
 
-console.log(add());
-
 export const ContactForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');

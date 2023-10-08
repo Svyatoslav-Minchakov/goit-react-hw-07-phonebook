@@ -10,12 +10,7 @@ export const sliceContact = createSlice({
   ],
   reducers: {
     add(state, action) {
-      console.log(action);
-      state.push({
-        id: action.payload.id,
-        name: action.payload.name,
-        number: action.payload.number,
-      });
+      state.push(action.payload);
     },
 
     remove(state, action) {
