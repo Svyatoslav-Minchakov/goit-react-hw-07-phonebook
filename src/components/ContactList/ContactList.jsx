@@ -15,6 +15,7 @@ export const ContactList = () => {
     );
     return filteredContacts;
   };
+
   return (
     <ul className={css.list}>
       {listContact().map(cont => {
