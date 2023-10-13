@@ -11,11 +11,12 @@ export const ContactList = () => {
     <>
       <ul className={css.list}>
         {contacts.map(obj => {
+          console.log(obj);
           return (
             <li key={obj.id} className={css.item}>
               <p className={css.text}>
                 <span className={css.phone}>
-                  {obj.name} : {obj.number}
+                  {obj.name} : {obj.phone}
                 </span>
               </p>
               <button
