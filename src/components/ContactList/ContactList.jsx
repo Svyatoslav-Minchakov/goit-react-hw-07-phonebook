@@ -11,7 +11,6 @@ export const ContactList = () => {
     <>
       <ul className={css.list}>
         {contacts.map(obj => {
-          console.log(obj);
           return (
             <li key={obj.id} className={css.item}>
               <p className={css.text}>
