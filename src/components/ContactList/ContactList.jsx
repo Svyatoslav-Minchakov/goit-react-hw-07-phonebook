@@ -1,43 +1,34 @@
-import css from './ContactList.module.css';
-import { useDispatch } from 'react-redux';
-import { remove } from 'redux/sliceContact';
-import { useSelector } from 'react-redux';
-import { selectContacts, selectFilter } from 'redux/selectors';
+import css from 'components/ContactList/ContactList.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/operations';
+import { getAllContacts } from 'redux/selectors';
 
 export const ContactList = () => {
+  const contacts = useSelector(getAllContacts);
   const dispatch = useDispatch();
-  const filtered = useSelector(selectFilter);
-  const contacts = useSelector(selectContacts);
-
-  const listContact = e => {
-    const filteredContacts = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filtered.toLowerCase())
-    );
-    return filteredContacts;
-  };
 
   return (
-    <ul className={css.list}>
-      {listContact().map(cont => {
-        return (
-          <li key={cont.id} className={css.listItem}>
-            <p className={css.text}>
-              <span className={css.phone}>
-                {cont.name}: {cont.number}
-              </span>
-            </p>
-            <button
-              className={css.btn}
-              type="button"
-              onClick={() => {
-                dispatch(remove(cont.id));
-              }}
-            >
-              Delete
-            </button>
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      <ul className={css.list}>
+        {contacts.map(obj => {
+          return (
+            <li key={obj.id} className={css.item}>
+              <p className={css.text}>
+                <span className={css.phone}>
+                  {obj.name} : {obj.number}
+                </span>
+              </p>
+              <button
+                type="button"
+                className={css.btn}
+                onClick={() => dispatch(deleteContact(obj.id))}
+              >
+                Delete
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </>
   );
 };

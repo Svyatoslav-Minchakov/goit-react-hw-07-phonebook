@@ -1,20 +1,32 @@
 .list {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
+  padding: 10px;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  max-height: 150px;
+  width: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0 auto;
 }
 
-.listItem {
+.item {
+  padding: 3px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: baseline;
+  width: 90%;
   margin: 5px;
-
-  display: flex;
-  gap: 15;
+  gap: 15px;
+  height: 20px;
+  margin: 0 auto;
 }
 .phone {
   font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .btn {
   padding: 2px 10px;

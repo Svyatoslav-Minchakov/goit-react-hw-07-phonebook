@@ -15,5 +15,13 @@
     text-transform: uppercase;
     color: rgba(66, 131, 109, 0.911);
     margin: 0;
+    font-size: 32px;
   }
+}
+
+.message {
+  font-size: 16px;
+  color: rgba(66, 131, 109, 0.911);
+  text-transform: uppercase;
+  text-align: center;
 }

@@ -4,11 +4,10 @@
   height: 200px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   padding: 20px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) inset;
-  margin-bottom: 30px;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .input {
@@ -38,4 +37,9 @@
 .btn:hover {
   background-color: teal;
   color: white;
+}
+
+.label {
+  font-size: 14px;
+  margin: 4px;
 }
